@@ -1,0 +1,496 @@
+/**
+ * Admin Styling for WooCommerce Core Pages Auto-Recovery.
+ *
+ * Utilizes CSS logical properties for seamless RTL support and WordPress admin standards.
+ */
+
+.wpcalibrate-wcpr-wrap {
+	max-width: 1200px;
+	margin-block-start: 20px;
+}
+
+.wpcalibrate-wcpr-header {
+	margin-block-end: 20px;
+	padding-block-end: 12px;
+	border-block-end: 1px solid #c3c4c7;
+}
+
+.wpcalibrate-wcpr-header-title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.wpcalibrate-wcpr-branding-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	line-height: 1;
+}
+
+.wpcalibrate-wcpr-branding-icon {
+	width: 32px;
+	height: 32px;
+	max-width: 32px;
+	max-height: 32px;
+	object-fit: contain;
+	border-radius: 4px;
+	flex-shrink: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Contextual placement sizing */
+.wpcalibrate-wcpr-branding-icon--sm {
+	width: 16px !important;
+	height: 16px !important;
+	max-width: 16px !important;
+	max-height: 16px !important;
+}
+
+.wpcalibrate-wcpr-branding-icon--md {
+	width: 24px !important;
+	height: 24px !important;
+	max-width: 24px !important;
+	max-height: 24px !important;
+}
+
+.wpcalibrate-wcpr-branding-icon--lg {
+	width: 32px !important;
+	height: 32px !important;
+	max-width: 32px !important;
+	max-height: 32px !important;
+}
+
+/* Default light background: display icon-dark */
+.wpcalibrate-wcpr-branding-icon--dark {
+	display: inline-block;
+}
+
+.wpcalibrate-wcpr-branding-icon--white {
+	display: none;
+}
+
+/* Dark mode and dark background containers: display icon-white */
+@media (prefers-color-scheme: dark) {
+	body.wp-dark-mode-active .wpcalibrate-wcpr-branding-icon--dark,
+	body[class*="dark-theme"] .wpcalibrate-wcpr-branding-icon--dark,
+	body[class*="dark-mode"] .wpcalibrate-wcpr-branding-icon--dark,
+	.is-dark-theme .wpcalibrate-wcpr-branding-icon--dark,
+	.has-dark-background .wpcalibrate-wcpr-branding-icon--dark,
+	[data-background="dark"] .wpcalibrate-wcpr-branding-icon--dark {
+		display: none;
+	}
+
+	body.wp-dark-mode-active .wpcalibrate-wcpr-branding-icon--white,
+	body[class*="dark-theme"] .wpcalibrate-wcpr-branding-icon--white,
+	body[class*="dark-mode"] .wpcalibrate-wcpr-branding-icon--white,
+	.is-dark-theme .wpcalibrate-wcpr-branding-icon--white,
+	.has-dark-background .wpcalibrate-wcpr-branding-icon--white,
+	[data-background="dark"] .wpcalibrate-wcpr-branding-icon--white {
+		display: inline-block;
+	}
+}
+
+/* Explicit dark classes override */
+body.wp-dark-mode-active .wpcalibrate-wcpr-branding-icon--dark,
+body[class*="dark-theme"] .wpcalibrate-wcpr-branding-icon--dark,
+body[class*="dark-mode"] .wpcalibrate-wcpr-branding-icon--dark,
+.is-dark-theme .wpcalibrate-wcpr-branding-icon--dark,
+.has-dark-background .wpcalibrate-wcpr-branding-icon--dark,
+[data-background="dark"] .wpcalibrate-wcpr-branding-icon--dark {
+	display: none !important;
+}
+
+body.wp-dark-mode-active .wpcalibrate-wcpr-branding-icon--white,
+body[class*="dark-theme"] .wpcalibrate-wcpr-branding-icon--white,
+body[class*="dark-mode"] .wpcalibrate-wcpr-branding-icon--white,
+.is-dark-theme .wpcalibrate-wcpr-branding-icon--white,
+.has-dark-background .wpcalibrate-wcpr-branding-icon--white,
+[data-background="dark"] .wpcalibrate-wcpr-branding-icon--white {
+	display: inline-block !important;
+}
+
+/* Explicit light background container override */
+.has-light-background .wpcalibrate-wcpr-branding-icon--dark,
+[data-background="light"] .wpcalibrate-wcpr-branding-icon--dark {
+	display: inline-block !important;
+}
+
+.has-light-background .wpcalibrate-wcpr-branding-icon--white,
+[data-background="light"] .wpcalibrate-wcpr-branding-icon--white {
+	display: none !important;
+}
+
+/* WordPress Admin Sidebar Menu Icon Sizing (20x20px placement) */
+#adminmenu #toplevel_page_wpcalibrate .wp-menu-image img,
+#adminmenu a.toplevel_page_wpcalibrate .wp-menu-image img,
+#adminmenu a[href*="page=wpcalibrate"] .wp-menu-image img {
+	width: 20px !important;
+	height: 20px !important;
+	max-width: 20px !important;
+	max-height: 20px !important;
+	padding-top: 7px !important;
+	object-fit: contain !important;
+	box-sizing: content-box !important;
+	opacity: 0.85;
+	transition: opacity 0.15s ease-in-out;
+}
+#adminmenu #toplevel_page_wpcalibrate:hover .wp-menu-image img,
+#adminmenu #toplevel_page_wpcalibrate.wp-has-current-submenu .wp-menu-image img,
+#adminmenu #toplevel_page_wpcalibrate.current .wp-menu-image img,
+#adminmenu #toplevel_page_wpcalibrate.wp-menu-open .wp-menu-image img {
+	opacity: 1 !important;
+}
+
+.wpcalibrate-wcpr-header-title h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.wpcalibrate-wcpr-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 2px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 600;
+	background: #f0f0f1;
+	color: #50575e;
+	border: 1px solid #c3c4c7;
+}
+
+.wpcalibrate-wcpr-subtitle {
+	margin-block-start: 6px;
+	margin-block-end: 0;
+	color: #646970;
+	font-size: 14px;
+}
+
+.wpcalibrate-wcpr-nav-tabs {
+	margin-block-end: 20px;
+}
+
+.wpcalibrate-wcpr-nav-tabs .nav-tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.wpcalibrate-wcpr-nav-tabs .nav-tab .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+
+/* Metric / Status Cards Grid */
+.wpcalibrate-wcpr-status-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 16px;
+	margin-block-end: 20px;
+}
+
+.wpcalibrate-wcpr-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	padding: 16px 20px;
+}
+
+.wpcalibrate-wcpr-card-metric h3 {
+	margin: 0 0 10px 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: #646970;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.wpcalibrate-wcpr-metric-value {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.wpcalibrate-wcpr-metric-value.is-healthy {
+	color: #008a20;
+}
+
+.wpcalibrate-wcpr-metric-value.is-unhealthy {
+	color: #d63638;
+}
+
+.wpcalibrate-wcpr-metric-value .dashicons {
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+}
+
+.wpcalibrate-wcpr-card-metric .description {
+	margin-block-start: 8px;
+	margin-block-end: 0;
+	font-size: 12px;
+	color: #646970;
+}
+
+/* Action Bar */
+.wpcalibrate-wcpr-action-bar {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-block-end: 20px;
+}
+
+.wpcalibrate-wcpr-inline-form {
+	display: inline-block;
+	margin: 0;
+}
+
+.wpcalibrate-wcpr-action-bar .button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	height: 36px;
+	padding-inline: 14px;
+}
+
+.wpcalibrate-wcpr-action-bar .button .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+
+/* Tables */
+.wpcalibrate-wcpr-table-card {
+	padding: 0;
+	overflow: hidden;
+}
+
+.wpcalibrate-wcpr-table-card h2 {
+	padding: 16px 20px;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+	border-block-end: 1px solid #c3c4c7;
+	background: #f6f7f7;
+}
+
+.wpcalibrate-wcpr-table {
+	border: 0;
+	box-shadow: none;
+}
+
+.wpcalibrate-wcpr-table td,
+.wpcalibrate-wcpr-table th {
+	vertical-align: middle;
+	padding: 12px 14px;
+}
+
+.wpcalibrate-wcpr-col-role strong {
+	display: block;
+	font-size: 14px;
+}
+
+.wpcalibrate-wcpr-code {
+	display: inline-block;
+	font-size: 11px;
+	color: #50575e;
+	background: #f0f0f1;
+	padding: 1px 4px;
+	border-radius: 3px;
+	margin-block-start: 4px;
+}
+
+.wpcalibrate-wcpr-page-id {
+	color: #646970;
+	font-size: 12px;
+	margin-inline-start: 4px;
+}
+
+.wpcalibrate-wcpr-text-muted {
+	color: #8c8f94;
+}
+
+.wpcalibrate-wcpr-diag-message {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.4;
+	color: #2c3338;
+}
+
+.wpcalibrate-wcpr-col-actions {
+	white-space: nowrap;
+}
+
+.wpcalibrate-wcpr-col-actions .button {
+	margin-inline-end: 4px;
+}
+
+/* Status Badges */
+.wpcalibrate-wcpr-badge.badge-healthy {
+	background: #e7f7ed;
+	color: #007017;
+	border-color: #68de7c;
+}
+
+.wpcalibrate-wcpr-badge.badge-warning {
+	background: #fcf9e8;
+	color: #826200;
+	border-color: #f0c33c;
+}
+
+.wpcalibrate-wcpr-badge.badge-error {
+	background: #fcf0f1;
+	color: #b32d2e;
+	border-color: #e65054;
+}
+
+.wpcalibrate-wcpr-badge .dashicons {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	margin-inline-end: 3px;
+}
+
+.wpcalibrate-wcpr-format-badge {
+	display: inline-block;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 500;
+	background: #f0f0f1;
+	color: #2c3338;
+}
+
+.wpcalibrate-wcpr-format-badge.format-block {
+	background: #e6f2ff;
+	color: #005a9c;
+}
+
+.wpcalibrate-wcpr-format-badge.format-shortcode {
+	background: #f4ecf8;
+	color: #652b82;
+}
+
+/* Inline Manual Assignment Drawer */
+.wpcalibrate-wcpr-assign-cell {
+	background: #f9f9f9;
+	padding: 16px 20px !important;
+	border-inline-start: 4px solid #2271b1;
+}
+
+.wpcalibrate-wcpr-assign-form fieldset {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.wpcalibrate-wcpr-checkbox-inline {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+}
+
+/* Settings Card */
+.wpcalibrate-wcpr-form-card {
+	padding: 20px 24px;
+}
+
+.wpcalibrate-wcpr-form-card h2 {
+	margin-block-start: 0;
+	padding-block-end: 12px;
+	border-block-end: 1px solid #f0f0f1;
+}
+
+/* History */
+.wpcalibrate-wcpr-history-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 20px;
+	border-block-end: 1px solid #c3c4c7;
+	background: #f6f7f7;
+}
+
+.wpcalibrate-wcpr-history-header h2 {
+	border: 0;
+	padding: 0;
+	background: transparent;
+}
+
+.wpcalibrate-wcpr-history-header .description {
+	margin: 4px 0 0 0;
+}
+
+.wpcalibrate-wcpr-status-tag {
+	display: inline-block;
+	padding: 1px 6px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.wpcalibrate-wcpr-status-tag.status-success {
+	background: #e7f7ed;
+	color: #007017;
+}
+
+.wpcalibrate-wcpr-status-tag.status-blocked,
+.wpcalibrate-wcpr-status-tag.status-warning {
+	background: #fcf9e8;
+	color: #826200;
+}
+
+.wpcalibrate-wcpr-status-tag.status-error,
+.wpcalibrate-wcpr-status-tag.status-partial_failure {
+	background: #fcf0f1;
+	color: #b32d2e;
+}
+
+/* Support Grid */
+.wpcalibrate-wcpr-support-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+@media screen and (max-width: 782px) {
+	.wpcalibrate-wcpr-support-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.wpcalibrate-wcpr-contact-list,
+.wpcalibrate-wcpr-guarantee-list {
+	list-style: none;
+	padding: 0;
+	margin: 16px 0 0 0;
+}
+
+.wpcalibrate-wcpr-contact-list li,
+.wpcalibrate-wcpr-guarantee-list li {
+	margin-block-end: 14px;
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	line-height: 1.5;
+}
+
+.wpcalibrate-wcpr-contact-list .dashicons {
+	color: #2271b1;
+	margin-block-start: 2px;
+}
