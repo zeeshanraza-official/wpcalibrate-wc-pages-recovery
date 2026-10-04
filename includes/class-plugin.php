@@ -59,9 +59,6 @@ class Plugin {
 		// Add Settings action link on Plugins listing.
 		add_filter( 'plugin_action_links_' . plugin_basename( WPCALIBRATE_WCPR_PLUGIN_FILE ), [ $this, 'add_plugin_action_links' ] );
 
-		// Initialize GitHub dashboard auto-updater.
-		GitHubUpdater::init();
-
 		// Initialize Background Automation & Event Listeners only if WooCommerce is ready.
 		if ( Lifecycle::is_woocommerce_ready() ) {
 			Scheduler::init();

@@ -16,10 +16,6 @@
  * WC requires at least: 11.1
  * WC tested up to: 11.1.2
  * Requires Plugins: woocommerce
- * Update URI: https://github.com/zeeshanraza-official/wpcalibrate-wc-pages-recovery
- * GitHub Plugin URI: zeeshanraza-official/wpcalibrate-wc-pages-recovery
- * Primary Branch: main
- * Release Asset: true
  *
  * @package WPCalibrate\WooPagesRecovery
  */

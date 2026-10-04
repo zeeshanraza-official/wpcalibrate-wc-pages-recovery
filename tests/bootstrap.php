@@ -549,7 +549,6 @@ namespace {
 	require_once dirname( __DIR__ ) . '/includes/class-recovery-service.php';
 	require_once dirname( __DIR__ ) . '/includes/class-scheduler.php';
 	require_once dirname( __DIR__ ) . '/includes/class-admin.php';
-	require_once dirname( __DIR__ ) . '/includes/class-github-updater.php';
 	require_once dirname( __DIR__ ) . '/includes/class-lifecycle.php';
 	require_once dirname( __DIR__ ) . '/includes/class-plugin.php';
 }

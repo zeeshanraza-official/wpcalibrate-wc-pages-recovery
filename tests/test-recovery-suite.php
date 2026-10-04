@@ -13,7 +13,6 @@ declare(strict_types=1);
 namespace WPCalibrate\WooPagesRecovery\Tests;
 
 use WPCalibrate\WooPagesRecovery\Admin;
-use WPCalibrate\WooPagesRecovery\GitHubUpdater;
 use WPCalibrate\WooPagesRecovery\History;
 use WPCalibrate\WooPagesRecovery\Lifecycle;
 use WPCalibrate\WooPagesRecovery\Lock;
@@ -52,7 +51,6 @@ class TestRunner {
 			'test_lifecycle_deactivation_and_uninstall_retention',
 			'test_shared_wpcalibrate_menu_coordination',
 			'test_blocks_vs_shortcodes_creation_format',
-			'test_github_updater_workflow',
 		];
 
 		foreach ( $tests as $test ) {
@@ -545,69 +543,6 @@ class TestRunner {
 		$bl_cart = RecoveryService::create_core_page( 'cart' );
 		$bl_post = get_post( $bl_cart['created_page_id'] );
 		$this->assert( str_contains( $bl_post->post_content, 'wp:woocommerce/cart' ), 'Blocks format must use wp:woocommerce/cart' );
-	}
-
-	/**
-	 * Acceptance Test 14:
-	 * GitHub Dashboard Auto-Updater Workflow.
-	 */
-	public function test_github_updater_workflow(): void {
-		\WCPR_Test_State::reset();
-		$plugin_file = GitHubUpdater::get_plugin_basename();
-		$this->assertEquals( 'wpcalibrate-wc-pages-recovery/wpcalibrate-wc-pages-recovery.php', $plugin_file );
-
-		// Simulate GitHub API endpoint returning a newer version v1.2.0 with a ZIP asset.
-		$api_url = 'https://api.github.com/repos/' . GitHubUpdater::GITHUB_REPO . '/releases/latest';
-		\WCPR_Test_State::$http_responses[ $api_url ] = [
-			'response' => [ 'code' => 200 ],
-			'body'     => json_encode( [
-				'tag_name'    => 'v1.2.0',
-				'body'        => '### Changes in 1.2.0\n- Enhanced page recovery engine\n- Performance optimizations',
-				'zipball_url' => 'https://api.github.com/repos/zeeshanraza-official/wpcalibrate-wc-pages-recovery/zipball/v1.2.0',
-				'assets'      => [
-					[
-						'name'                 => 'wpcalibrate-wc-pages-recovery.zip',
-						'browser_download_url' => 'https://github.com/zeeshanraza-official/wpcalibrate-wc-pages-recovery/releases/download/v1.2.0/wpcalibrate-wc-pages-recovery.zip',
-					],
-				],
-			] ),
-		];
-
-		// Force refresh to bypass any cached transient.
-		delete_transient( GitHubUpdater::TRANSIENT_KEY );
-
-		// 1. Verify update transient population for new version.
-		$transient = (object) [ 'response' => [], 'no_update' => [] ];
-		$filtered  = GitHubUpdater::filter_update_plugins( $transient );
-
-		$this->assert( isset( $filtered->response[ $plugin_file ] ), 'New version must be placed in response array' );
-		$update = $filtered->response[ $plugin_file ];
-		$this->assertEquals( '1.2.0', $update->new_version );
-		$this->assertEquals( 'https://github.com/zeeshanraza-official/wpcalibrate-wc-pages-recovery/releases/download/v1.2.0/wpcalibrate-wc-pages-recovery.zip', $update->package );
-
-		// 2. Verify plugins_api modal details.
-		$args = (object) [ 'slug' => 'wpcalibrate-wc-pages-recovery' ];
-		$info = GitHubUpdater::filter_plugins_api( false, 'plugin_information', $args );
-
-		$this->assert( is_object( $info ), 'plugins_api must return object' );
-		$this->assertEquals( '1.2.0', $info->version );
-		$this->assert( str_contains( $info->sections['changelog'], 'Enhanced page recovery engine' ), 'Changelog must include release notes' );
-
-		// 3. Verify when GitHub has same/lower version, it populates no_update.
-		\WCPR_Test_State::$http_responses[ $api_url ] = [
-			'response' => [ 'code' => 200 ],
-			'body'     => json_encode( [
-				'tag_name'    => 'v1.0.0',
-				'zipball_url' => 'https://example.com/download.zip',
-				'assets'      => [],
-			] ),
-		];
-		delete_transient( GitHubUpdater::TRANSIENT_KEY );
-
-		$transient2 = (object) [ 'response' => [], 'no_update' => [] ];
-		$filtered2  = GitHubUpdater::filter_update_plugins( $transient2 );
-		$this->assert( isset( $filtered2->no_update[ $plugin_file ] ), 'Current version must be placed in no_update array' );
-		$this->assert( ! isset( $filtered2->response[ $plugin_file ] ), 'Current version must not be in response array' );
 	}
 }
 
