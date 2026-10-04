@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WooCommerce Core Pages Auto-Recovery
+ * Plugin Name: WPCalibrate Core Pages Auto-Recovery for WooCommerce
  * Plugin URI: https://github.com/zeeshanraza-official/wpcalibrate-wc-pages-recovery
  * Description: Automatically detects and safely repairs missing WooCommerce Cart, Checkout, and My Account pages and page assignments.
  * Version: 1.0.0
@@ -99,7 +99,7 @@ add_action( 'plugins_loaded', function(): void {
 					<?php
 					printf(
 						/* translators: 1: Required PHP version, 2: Current PHP version */
-						esc_html__( 'WooCommerce Core Pages Auto-Recovery requires PHP %1$s or higher. Your server is running PHP %2$s. The plugin has been disabled.', 'wpcalibrate-wc-pages-recovery' ),
+						esc_html__( 'WPCalibrate Core Pages Auto-Recovery for WooCommerce requires PHP %1$s or higher. Your server is running PHP %2$s. The plugin has been disabled.', 'wpcalibrate-wc-pages-recovery' ),
 						esc_html( WPCALIBRATE_WCPR_MIN_PHP ),
 						esc_html( PHP_VERSION )
 					);

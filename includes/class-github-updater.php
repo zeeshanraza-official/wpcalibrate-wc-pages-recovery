@@ -121,7 +121,7 @@ final class GitHubUpdater {
 		$changelog      = ! empty( $release['body'] ) ? $release['body'] : __( 'Maintenance and stability improvements.', 'wpcalibrate-wc-pages-recovery' );
 
 		$info = (object) [
-			'name'          => __( 'WooCommerce Core Pages Auto-Recovery', 'wpcalibrate-wc-pages-recovery' ),
+			'name'          => __( 'WPCalibrate Core Pages Auto-Recovery for WooCommerce', 'wpcalibrate-wc-pages-recovery' ),
 			'slug'          => 'wpcalibrate-wc-pages-recovery',
 			'version'       => $latest_version,
 			'author'        => '<a href="https://wpcalibrate.com">WPCalibrate</a>',

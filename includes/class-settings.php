@@ -128,7 +128,7 @@ class Settings {
 			self::OPTION_NAME,
 			[
 				'type'              => 'array',
-				'description'       => __( 'WooCommerce Core Pages Auto-Recovery Configuration', 'wpcalibrate-wc-pages-recovery' ),
+				'description'       => __( 'WPCalibrate Core Pages Auto-Recovery for WooCommerce Configuration', 'wpcalibrate-wc-pages-recovery' ),
 				'sanitize_callback' => [ self::class, 'sanitize' ],
 				'show_in_rest'      => false,
 				'default'           => self::get_defaults(),

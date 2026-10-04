@@ -64,7 +64,7 @@ class Admin {
 		// Register unique submenu for Core Pages Auto-Recovery.
 		add_submenu_page(
 			self::PARENT_SLUG,
-			__( 'WooCommerce Core Pages Auto-Recovery', 'wpcalibrate-wc-pages-recovery' ),
+			__( 'WPCalibrate Core Pages Auto-Recovery for WooCommerce', 'wpcalibrate-wc-pages-recovery' ),
 			__( 'Core Pages Recovery', 'wpcalibrate-wc-pages-recovery' ),
 			'manage_options',
 			self::PAGE_SLUG,
@@ -172,7 +172,7 @@ class Admin {
 			?>
 			<div class="notice notice-warning is-dismissible">
 				<p>
-					<strong><?php esc_html_e( 'WooCommerce Core Pages Auto-Recovery:', 'wpcalibrate-wc-pages-recovery' ); ?></strong>
+					<strong><?php esc_html_e( 'WPCalibrate Core Pages Auto-Recovery for WooCommerce:', 'wpcalibrate-wc-pages-recovery' ); ?></strong>
 					<?php esc_html_e( 'WooCommerce is not active or not installed. Automatic recovery is currently paused.', 'wpcalibrate-wc-pages-recovery' ); ?>
 				</p>
 			</div>
@@ -259,7 +259,7 @@ class Admin {
 						<img src="<?php echo esc_url( WPCALIBRATE_WCPR_PLUGIN_URL . 'branding/icon-dark.png' ); ?>" alt="WPCalibrate" class="wpcalibrate-wcpr-branding-icon wpcalibrate-wcpr-branding-icon--dark" width="32" height="32" />
 						<img src="<?php echo esc_url( WPCALIBRATE_WCPR_PLUGIN_URL . 'branding/icon-white.png' ); ?>" alt="WPCalibrate" class="wpcalibrate-wcpr-branding-icon wpcalibrate-wcpr-branding-icon--white" width="32" height="32" />
 					</span>
-					<h1><?php esc_html_e( 'WooCommerce Core Pages Auto-Recovery', 'wpcalibrate-wc-pages-recovery' ); ?></h1>
+					<h1><?php esc_html_e( 'WPCalibrate Core Pages Auto-Recovery for WooCommerce', 'wpcalibrate-wc-pages-recovery' ); ?></h1>
 					<span class="wpcalibrate-wcpr-badge"><?php echo esc_html( 'v' . WPCALIBRATE_WCPR_VERSION ); ?></span>
 				</div>
 				<p class="wpcalibrate-wcpr-subtitle">
@@ -875,7 +875,7 @@ class Admin {
 			<div class="wpcalibrate-wcpr-card wpcalibrate-wcpr-support-policy">
 				<h2><?php esc_html_e( 'Safe Recovery Guarantee', 'wpcalibrate-wc-pages-recovery' ); ?></h2>
 				<p>
-					<?php esc_html_e( 'WooCommerce Core Pages Auto-Recovery is engineered with strict non-destructive safety principles:', 'wpcalibrate-wc-pages-recovery' ); ?>
+					<?php esc_html_e( 'WPCalibrate Core Pages Auto-Recovery for WooCommerce is engineered with strict non-destructive safety principles:', 'wpcalibrate-wc-pages-recovery' ); ?>
 				</p>
 				<ul class="wpcalibrate-wcpr-guarantee-list">
 					<li><strong><?php esc_html_e( 'Zero Data Overwrite:', 'wpcalibrate-wc-pages-recovery' ); ?></strong> <?php esc_html_e( 'Existing custom page content, shortcodes, and builder layouts are never overwritten or modified.', 'wpcalibrate-wc-pages-recovery' ); ?></li>

@@ -1,11 +1,12 @@
-=== WooCommerce Core Pages Auto-Recovery ===
+=== WPCalibrate Core Pages Auto-Recovery for WooCommerce ===
 Contributors: wpcalibrate
-Tags: woocommerce, cart, checkout, my-account, auto-recovery, page-repair, page-builder
+Tags: woocommerce, cart, checkout, auto-recovery, recovery
 Requires at least: 7.0
 Tested up to: 7.1.2
 Requires PHP: 8.2
 WC requires at least: 11.1
 WC tested up to: 11.1.2
+Requires Plugins: woocommerce
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +15,7 @@ Automatically detect and safely repair missing WooCommerce Cart, Checkout, and M
 
 == Description ==
 
-**WooCommerce Core Pages Auto-Recovery** by WPCalibrate is a rock-solid, production-grade utility designed to prevent store downtime and lost checkout conversions. Accidental page trashing, deletion, unassignment, or broken shortcode blocks can take down your cart and checkout without warning.
+**WPCalibrate Core Pages Auto-Recovery for WooCommerce** by WPCalibrate is a rock-solid, production-grade utility designed to prevent store downtime and lost checkout conversions. Accidental page trashing, deletion, unassignment, or broken shortcode blocks can take down your cart and checkout without warning.
 
 This plugin continuously monitors your essential store pages and safely repairs or restores them according to verified architectural policies.
 

@@ -1,4 +1,4 @@
-# WooCommerce Core Pages Auto-Recovery
+# WPCalibrate Core Pages Auto-Recovery for WooCommerce
 
 [![WordPress](https://img.shields.io/badge/WordPress-7.0%20to%207.1.2-blue.svg)](https://wordpress.org)
 [![WooCommerce](https://img.shields.io/badge/WooCommerce-11.1%20to%2011.1.2-purple.svg)](https://woocommerce.com)
@@ -17,7 +17,7 @@ Developed with precision by [WPCalibrate](https://wpcalibrate.com).
 
 When essential WooCommerce pages (Cart, Checkout, My Account) are accidentally deleted, trashed, unassigned, or conflicted by redesigns or client edits, customer checkout flows break and revenue stops instantly.
 
-**WooCommerce Core Pages Auto-Recovery** constantly monitors your store pages and immediately repairs assignments and canonical templates without data loss, race conditions, or human error.
+**WPCalibrate Core Pages Auto-Recovery for WooCommerce** constantly monitors your store pages and immediately repairs assignments and canonical templates without data loss, race conditions, or human error.
 
 ---
 

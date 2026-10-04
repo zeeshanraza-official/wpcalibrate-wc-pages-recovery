@@ -31,7 +31,7 @@ class TestRunner {
 
 	public function run(): void {
 		echo "============================================================\n";
-		echo " WPCalibrate WooCommerce Core Pages Auto-Recovery Test Suite \n";
+		echo " WPCalibrate Core Pages Auto-Recovery for WooCommerce Test Suite \n";
 		echo " Running on PHP " . PHP_VERSION . "\n";
 		echo "============================================================\n\n";
 
